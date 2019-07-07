@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.edu.xaut.ipv6smartmuseumclient.MainActivity"
+    android:background="@color/main_bg_color">
+
+    <com.daimajia.slider.library.SliderLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/mainBanner"
+        android:layout_height="175dp"
+        android:background="@color/main_bg_color">
+
+    </com.daimajia.slider.library.SliderLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/mainBanner"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:id="@+id/mainFunctionBar"
+            android:background="@android:color/background_light"
+            android:layout_below="@+id/mainBanner"
+            android:layout_alignParentStart="true"
+            android:layout_height="115dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/mainButton1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ivMainButton1"
+                    android:background="@drawable/circle_main_page_icon"
+                    app:srcCompat="@android:drawable/ic_menu_search"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:text="@string/main_page_function1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvMainButton1"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/mainButton2">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_main_page_icon"
+                    android:id="@+id/ivMainButton2"
+                    app:srcCompat="@android:drawable/ic_menu_info_details"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:text="@string/main_page_function2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvMainButton2"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/mainButton3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_main_page_icon"
+                    android:id="@+id/ivMainButton3"
+                    app:srcCompat="@android:drawable/ic_menu_directions"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:text="@string/main_page_function3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvMainButton3"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/mainButton4">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_main_page_icon"
+                    android:id="@+id/ivMainButton4"
+                    app:srcCompat="@android:drawable/ic_menu_today"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:text="@string/main_page_function4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvMainButton4"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/mainFunctionBar"
+            android:layout_alignParentStart="true"
+            android:background="?attr/colorButtonNormal">
+
+        </RelativeLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mainNews"
+            android:listSelector="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/linearLayout" />
+
+    </LinearLayout>
+
+</RelativeLayout>

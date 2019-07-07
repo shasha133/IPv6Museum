@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.xaut.ipv6smartmuseumclient">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StartActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".AllExhibitsActivity"
+            android:label="@string/main_page_function1" />
+        <activity
+            android:name=".SelectHowToGuideActivity"
+            android:label="@string/select_how_to_guide" />
+        <activity
+            android:name=".ShopActivity"
+            android:label="@string/main_page_function4" />
+        <activity
+            android:name=".NewsActivity"
+            android:label="@string/news_info" />
+        <activity
+            android:name=".ExhibitWithoutSuggestActivity"
+            android:label="@string/exhibit_intro" />
+        <activity
+            android:name=".SuggestActivity"
+            android:label="@string/select_selection1" />
+        <activity
+            android:name=".ChangeExhibitsActivity"
+            android:label="@string/change_exhibit" />
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/main_page_function3" />
+        <activity
+            android:name=".ExhibitWithSuggestActivity"
+            android:label="@string/exhibit_intro" />
+        <activity
+            android:name=".BuildRouteActivity"
+            android:label="@string/build_route" />
+
+        <service
+            android:name=".StepService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".DirectionService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ImformationActivity" />
+        <activity android:name=".GoodDetailActivity"
+            android:label="@string/store_goods"/>
+        <activity android:name=".ShopCartActivity"
+            android:label="@string/store_cart"/>
+    </application>
+
+</manifest>
