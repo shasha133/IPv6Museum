@@ -1,0 +1,72 @@
+package com.IPv6Museum.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.IPv6Museum.model.Exhibitsinfo;
+
+/**
+ * 查找展品详细信息
+ * exhibits_id， exhibitsinfo_intro， exhibitsinfo_imgfull
+ * exhibitsinfo_voice, exhibitsinfo_audio, hall_id
+ *
+ */
+public class ExhibitsinfoDao {
+
+	private ConnectMysql connectMysql=new ConnectMysql();
+	private Connection connection=connectMysql.getConn();
+	
+	//查找全部展品信息
+	public List<Exhibitsinfo> ListExhibitsinfo() {
+		List<Exhibitsinfo> list=new ArrayList<>();
+		String sql="select * from exhibitsinfo";
+		try {
+			Statement stmt=connection.createStatement();
+			ResultSet rst=stmt.executeQuery(sql);
+			while (rst.next()) {
+				Exhibitsinfo exhibitsinfo=new Exhibitsinfo();
+				exhibitsinfo.setExhibitsinfo_imgfull(rst.getString(1));
+				exhibitsinfo.setExhibitsinfo_intro(rst.getString(2));
+				exhibitsinfo.setExhibitsinfo_voice(rst.getString(3));
+				exhibitsinfo.setExhibitsinfo_audio(rst.getString(4));
+				exhibitsinfo.setExhibits_id(rst.getInt(5));
+				exhibitsinfo.setHall_id(rst.getInt(6));
+				list.add(exhibitsinfo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;		
+	}
+	
+	//根据编号找展品信息
+	public List<Exhibitsinfo> GetExhibitsinfoByExhibits_id(int id) {
+		List<Exhibitsinfo> list=new ArrayList<>();
+		String sql="select * from exhibitsinfo where exhibits_id="+id;
+		try {
+			Statement stmt=connection.createStatement();
+			ResultSet rst=stmt.executeQuery(sql);
+			while (rst.next()) {
+				Exhibitsinfo exhibitsinfo=new Exhibitsinfo();
+				exhibitsinfo.setExhibitsinfo_imgfull(rst.getString(1));
+				exhibitsinfo.setExhibitsinfo_intro(rst.getString(2));
+				exhibitsinfo.setExhibitsinfo_voice(rst.getString(3));
+				exhibitsinfo.setExhibitsinfo_audio(rst.getString(4));
+				exhibitsinfo.setExhibits_id(rst.getInt(5));
+				exhibitsinfo.setHall_id(rst.getInt(6));
+				list.add(exhibitsinfo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;		
+	}
+
+
+}

@@ -1,0 +1,22 @@
+package com.IPv6Museum.model;
+
+public class Classification {
+	
+	private int  Classification_id;
+	private String  Classification_name;
+	
+	public int  getClassification_id() {
+		return Classification_id;
+	}
+	public void setClassification_id(int i) {
+		Classification_id = i;
+	}
+	public String getClassification_name() {
+		return Classification_name;
+	}
+	public void setClassification_name(String classification_name) {
+		Classification_name = classification_name;
+	}
+
+	
+}

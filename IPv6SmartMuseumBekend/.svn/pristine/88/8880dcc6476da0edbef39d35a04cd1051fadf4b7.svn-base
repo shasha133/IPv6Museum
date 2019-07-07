@@ -1,0 +1,5 @@
+package com.IPv6Museum.dao;
+
+public class ExhibitsDao {
+
+}
