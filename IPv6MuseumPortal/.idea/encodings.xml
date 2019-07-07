@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/controller/LoginController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/controller/admin/ExhibitsController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/ActivityType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Advice.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Apply.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Collect.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Comment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Dynasty.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Exhibits.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Hall.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Material.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Nation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Page.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Record.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Religion.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Reply.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/State.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/museum/entity/Value.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/museum/front/register.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/asserts/i" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/asserts/js/jquery-1.3.2.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/asserts/js/jquery.poshytip.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/amazeui.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/amazeui.datatables.min.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/amazeui.flat.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/amazeui.mineeeee.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/animate.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/font-awesome.min.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/main.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/prettyPhoto.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/css/style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/images/geometry.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/images/graduate.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/images/headPortrait.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/jquery.isotope.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/jquery.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/jquery.placeholder.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/jquery.validate.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/jquery.waypoints.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/modernizr-2.6.2.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/respond.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resourcesOne/js/wow.min.js" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

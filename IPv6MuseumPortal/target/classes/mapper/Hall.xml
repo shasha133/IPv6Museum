@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 定义对应的名空间,避免命名冲突。事实上可以随便定义，例如abc,只要在应用中不要出现冲突即可.namespace目前有2种定义方式， 1、使用ibatis的定义方法，这里是实体类的全名；2、使用Mapper接口的全名，新用法 -->
+<mapper namespace="museum.dao.HallDao">
+    <select id="find" resultType="Hall">
+		SELECT Hall_id,Hall_state,Hall_image,Hall_info
+		FROM hall
+	</select>
+</mapper>

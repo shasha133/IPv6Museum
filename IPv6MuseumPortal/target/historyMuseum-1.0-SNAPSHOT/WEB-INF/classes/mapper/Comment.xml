@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 定义对应的名空间,避免命名冲突。事实上可以随便定义，例如abc,只要在应用中不要出现冲突即可.namespace目前有2种定义方式， 1、使用ibatis的定义方法，这里是实体类的全名；2、使用Mapper接口的全名，新用法 -->
+<mapper namespace="museum.dao.CommentDao">
+    <select id="find" resultType="Comment">
+		SELECT Comment_id,Topic_type,Topic_id,Comment_content,From_uid,Comment_time,Comment_state
+		FROM comment
+	</select>
+
+    <select id="findR" resultType="reply">
+		SELECT Comment_id,Reply_id,Reply_content,From_uid,To_uid,Reply_time
+		FROM reply
+	</select>
+
+    <select id="getRowCount" resultType="int">
+		SELECT count(*) FROM comment
+	</select>
+
+    <select id="findPageData" resultType="museum.entity.Comment">
+		SELECT Comment_id,Reply_id,Reply_content,From_uid,To_uid,Reply_time
+		FROM comment limit #(startLine),#{size}
+	</select>
+
+
+    <select id="findReply" resultType="reply">
+		SELECT Comment_id,Reply_id,Reply_content,From_uid,To_uid,Reply_time
+		FROM reply where Comment_id=#{commentId}
+	</select>
+
+    <select id="Find" resultType="Comment">
+		SELECT Comment_id,Topic_type,Topic_id,Comment_content,From_uid,Comment_time,Comment_state
+		FROM comment where Comment_id=#{commentId}
+	</select>
+
+    <insert id="saveR">
+        insert into reply(Reply_content,From_uid,To_uid,Reply_time)
+        VALUE
+        (#{comment},#{fromUid},#{toUid},#{replyTime})
+    </insert>
+
+    <select id="findBy" resultType="museum.entity.Comment">
+        SELECT Comment_id,Topic_type,Topic_id,Comment_content,From_uid,Comment_time,Comment_state
+        FROM comment
+        where
+        <if test="commentId != null">
+            Comment_id = #{commentId}
+        </if>
+        <if test="commenttime != null">
+            and Comment_time = #{commenttime}
+        </if>
+    </select>
+</mapper>

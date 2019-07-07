@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 定义对应的名空间,避免命名冲突。事实上可以随便定义，例如abc,只要在应用中不要出现冲突即可.namespace目前有2种定义方式， 1、使用ibatis的定义方法，这里是实体类的全名；2、使用Mapper接口的全名，新用法 -->
+<mapper namespace="museum.dao.NewsDao">
+    <select id="find" resultType="museum.entity.News">
+		SELECT News_id,News_title,News_abstract,News_context,News_image
+		,News_time,News_prv
+		FROM news
+	</select>
+
+    <select id="findById" resultType="News">
+		SELECT News_id,News_title,News_abstract,News_context,News_image
+		,News_time,News_prv
+		FROM news where News_id=#{newsId};
+	</select>
+
+    <select id="findAll" resultType="News">
+		SELECT News_id,News_title,News_abstract,News_context,News_image
+		,News_time,News_prv
+		FROM news order by News_time
+	</select>
+
+    <select id="findThreeNews" resultType="News">
+		SELECT News_id,News_title,News_abstract,News_context,News_image
+		,News_time,News_prv
+		FROM news order by News_time limit 3
+	</select>
+
+    <!--//分页查询-->
+    <select id="findPageData" resultType="News">
+		SELECT News_id,News_title,News_abstract,News_context,News_image
+		,News_time,News_prv
+		FROM news order by News_time limit #{start},#{size}
+	</select>
+
+    <select id="getRowCount" resultType="int">
+		SELECT count(*) FROM news
+	</select>
+
+    <insert id="save" parameterType="News">
+        insert news (News_title,News_abstract,News_context,News_time)
+		value (#{news.newsTitle},#{news.newsAbstract},#{news.newsContext},#{news.newsTime})
+	</insert>
+
+
+    <delete id="delete">
+         delete from news where WHERE News_id=#{newsId}
+	</delete>
+
+    <update id="update" parameterType="News">
+        UPDATE news
+            SET
+              News_title = #{news.newsTitle},
+              News_abstract = #{news.newsAbstract},
+              News_context = #{news.newsContext},
+              News_image = #{news.newsImage},
+              News_time = #{news.newsTime}
+         WHERE News_id = #{news.newsId}
+	</update>
+</mapper>

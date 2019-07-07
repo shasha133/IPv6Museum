@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 定义对应的名空间,避免命名冲突。事实上可以随便定义，例如abc,只要在应用中不要出现冲突即可.namespace目前有2种定义方式， 1、使用ibatis的定义方法，这里是实体类的全名；2、使用Mapper接口的全名，新用法 -->
+<mapper namespace="museum.dao.ExhibitsDao">
+    <select id="getRowCount" resultType="int">
+		SELECT count(*) FROM exhibits
+	</select>
+
+    <select id="findFour" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+        FROM exhibits order by Exhibits_produce_time limit 4
+	</select>
+
+    <select id="find" parameterType="int" resultType="museum.entity.Exhibits">
+		SELECT  Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+               FROM exhibits where hall_id=#{hallId} limit 2
+	</select>
+
+    <select id="findExhibits" parameterType="int" resultType="museum.entity.Exhibits">
+		SELECT  Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+               FROM exhibits where Exhibits_id=#{exhibitsId}
+	</select>
+
+    <select id="findAll" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+        FROM exhibits
+	</select>
+
+    <!--//分页查询-->
+    <select id="findPageData" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+		FROM exhibits where Material_id=#{materiaId} limit #{start},#{size}
+	</select>
+
+    <select id="findPageDataFive" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+		FROM exhibits limit #{start},#{size}
+	</select>
+
+
+
+    <select id="findPageDataHall" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+		FROM exhibits where hall_id=#{hallId} limit #{start},#{size}
+	</select>
+
+
+    <select id="findPageDataRecommended" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+		FROM exhibits order by #{type} limit #{start},#{size}
+	</select>
+
+    <select id="findBy" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+		FROM exhibits where Material_id=#{Material},Dynasty_id=#{Dynasty},Apply_id=#{Apply},Value_id=#{Value}
+	</select>
+
+    <select id="findById" resultType="museum.entity.Exhibits">
+		SELECT Exhibits_id,Dynasty_id,State_id,Apply_id,Nation_id,Value_id
+               ,Religionl_id,Material_id,Exhibits_cherish,Exhibits_name,Exhibits_produce_place
+               ,Exhibits_produce_time,Exhibits_excavate_place,Exhibits_excavate_time,Exhibits_location_x,Exhibits_location_y
+               ,Exhibits_location_number,Exhibits_point_number,Exhibits_appearance,Exhibits_detail
+               ,Exhibits_voice,Exhibits_image,Exhibits_upvote,Exhibits_browse,Exhibits_damage
+               ,hall_id,Exhibits_imagecut,Exhibits_imagefull
+		FROM exhibits where Exhibits_id=#{accessExhibit.exhibitsId}
+	</select>
+</mapper>
